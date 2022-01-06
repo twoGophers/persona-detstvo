@@ -1,0 +1,46 @@
+.icon-arrow {
+    margin-right: 12px;
+    width: 32px;
+    height: 32px;
+    -webkit-box-shadow: 4px 4px 6px rgba(0,0,0,.06),2px 1px 3px rgba(0,0,0,.06),inset -1px -1px 2px rgba(0,0,0,.1),inset 1px 1px 1px rgba(255,255,255,.4);
+    box-shadow: 4px 4px 6px rgba(0,0,0,.06),2px 1px 3px rgba(0,0,0,.06),inset -1px -1px 2px rgba(0,0,0,.1),inset 1px 1px 1px rgba(255,255,255,.4);
+    -webkit-transition: all .3s cubic-bezier(.65,.05,.36,1);
+    -o-transition: all .3s cubic-bezier(.65,.05,.36,1);
+    transition: all .3s cubic-bezier(.65,.05,.36,1);
+}
+.icon-arrow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: -o-linear-gradient(312.36deg,#f0f1f5 42.53%,#fff 97.97%);
+    background: linear-gradient(137.64deg,#f0f1f5 42.53%,#fff 97.97%);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-transition: all .3s cubic-bezier(.65,.05,.36,1);
+    -o-transition: all .3s cubic-bezier(.65,.05,.36,1);
+    transition: all .3s cubic-bezier(.65,.05,.36,1);
+    &:hover {    
+        -webkit-box-shadow: -4px -4px 8px rgba(255,255,255,.24),8px 8px 10px rgba(208,133,91,.53),3px 3px 3px rgba(208,133,91,.5),inset -1px -1px 1px rgba(208,126,91,.2),inset 1px 1px 1px rgba(255,255,255,.16);
+        box-shadow: -4px -4px 8px rgba(255,255,255,.24),8px 8px 10px rgba(208,133,91,.53),3px 3px 3px rgba(208,133,91,.5),inset -1px -1px 1px rgba(208,126,91,.2),inset 1px 1px 1px rgba(255,255,255,.16);
+    }
+}
+.icon-arrow svg{
+    width: 14px;
+    path {
+        fill: #ffa8a8;
+    }
+}
+
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+}

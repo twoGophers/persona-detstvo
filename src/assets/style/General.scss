@@ -1,0 +1,158 @@
+body {
+    height: 100%;
+    // overflow: hidden!important;
+    overflow-x: hidden;
+    background-color: #f5f6f9;
+    color: #212529;
+    text-align: left;
+}
+.wrapper {
+    // overflow-x:hidden;
+    min-height: 100%;
+    ._container{
+       max-width: 1170px;
+       margin: 0 auto;
+    //    overflow-x:hidden;
+    }
+}
+
+.hoverLink {
+    transition: all .3s cubic-bezier(.65,.05,.36,1);
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.section {
+    display: block;
+    border-radius: 150vw 150vw 0 0/22vw 22vw 0 0;
+    -webkit-box-shadow: -4px -20px 20px rgba(0,0,0,.08),11px 12px 20px rgba(0,0,0,.05),11px 9px 15px rgba(0,0,0,.05),inset -2px -2px 3px rgba(0,0,0,.09),inset 2px 2px 3px rgba(255,255,255,.42)!important;
+    box-shadow: -4px -20px 20px rgba(0,0,0,.08),11px 12px 20px rgba(0,0,0,.05),11px 9px 15px rgba(0,0,0,.05),inset -2px -2px 3px rgba(0,0,0,.09),inset 2px 2px 3px rgba(255,255,255,.42)!important;
+    &__container {
+        width: 75%;
+        margin: 0 auto;
+        outline: 1px solid black;
+    }
+    &__title {
+        font-family: Comfortaa,sans-serif;
+        font-size: 116px;
+        font-weight: 700;
+        line-height: 116px;
+        letter-spacing: -.03em;
+        -webkit-font-feature-settings: "pnum" on,"lnum" on;
+        font-feature-settings: "pnum" on,"lnum" on;
+    }
+}
+
+
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: flex;
+}
+
+a, span, button, h1, li {
+    font-family: $fcaa;
+    -webkit-transition: color .2s ease-out;
+    -o-transition: color .2s ease-out;
+    transition: color .2s ease-out;
+    font-weight: 200;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -.02em;
+    -webkit-font-feature-settings: "pnum" on,"lnum" on;
+    font-feature-settings: "pnum" on,"lnum" on;
+    color: #4b4b4b;
+    // text-align: center;
+    // display: block;
+    -webkit-transition: color .2s ease-out;
+    -o-transition: color .2s ease-out;
+    transition: color .2s ease-out;
+}
+
+button {
+    cursor: pointer;
+}
+
+b {
+    font-weight: bolder;
+}
+
+.btn {
+    border-radius: 50px;
+    padding: 15px 15px;
+    // position: relative;
+    box-shadow: 6px 6px 6px 1px rgba(148, 167, 182, 0.2);
+    //border: 2px solid #fcc5b1;
+    transition: 0.3s;
+    background-image: linear-gradient(137.64deg, #f0f1f5 42.53%, #fff 97.97%);
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: block;
+        margin: auto;
+        border-radius: 50px;
+        -webkit-transition: all .3s cubic-bezier(.65,.05,.36,1);
+        -o-transition: all .3s cubic-bezier(.65,.05,.36,1);
+        transition: all .3s cubic-bezier(.65,.05,.36,1); 
+        z-index: -2;
+        //box-shadow:  -1px -1px 2px rgba(0,0,0,.08),inset 1px 1px 2px rgba(255,255,255,.22),6px 6px 6px rgba(0,0,0,.08),2px 1px 7px rgba(0,0,0,.05)!important; 
+    }
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: block;
+        margin: auto;
+        border-radius: 50px;
+        -webkit-transition: all .3s cubic-bezier(.65,.05,.36,1);
+        -o-transition: all .3s cubic-bezier(.65,.05,.36,1);
+        transition: all .3s cubic-bezier(.65,.05,.36,1);
+        z-index: -2;
+    }
+    &:hover {
+        box-shadow: 0 6px 6px -4px rgba(0, 0, 0, .5);
+    }
+}
+
+.btn-bg {
+    background-color: #fa7794;
+    background-image: linear-gradient(60deg, #fab59a 10%, #fac396 50%, #faf2c6 100%);
+    color: white;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+    &:hover {
+        box-shadow: 0 6px 6px -4px rgba(0, 0, 0, .5);
+        margin-top: -3px; 
+    }
+    &::before {
+        -webkit-box-shadow: -4px -4px 8px rgba(255,255,255,.2),8px 8px 10px rgba(0,0,0,.06),3px 3px 5px rgba(0,0,0,.1),inset -1px -1px 1px rgba(52,52,52,.2),inset 1px 1px 1px rgba(255,255,255,.9);
+        box-shadow: -4px -4px 8px rgba(255,255,255,.2),8px 8px 10px rgba(0,0,0,.06),3px 3px 5px rgba(0,0,0,.1),inset -1px -1px 1px rgba(52,52,52,.2),inset 1px 1px 1px rgba(255,255,255,.9);
+    }
+}
+
+.btn-font {}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: flex;
+}

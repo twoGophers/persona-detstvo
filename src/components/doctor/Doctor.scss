@@ -1,0 +1,23 @@
+@import '../../assets/style/Imports.scss';
+
+
+.section__blue{
+    background: -o-linear-gradient(312.36deg,#81b3ff 14.8%,#9cc7ff 97.97%);
+    background: linear-gradient(137.64deg,#81b3ff 14.8%,#9cc7ff 97.97%);
+    position: relative;
+    z-index: 1;
+}
+
+.doctor {
+    padding-top: 3px;
+    color: #fff;
+    height: auto;
+    margin-top: -8%;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    padding-top: 145px;
+    padding-bottom: 250px;
+    .doctor-body {
+        @include displayf($df, $fdr, $jcsb, $aic);
+    }
+}
