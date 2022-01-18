@@ -1,0 +1,21 @@
+.footer{
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    .footer__logo {
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .footer {
+        flex-direction: column;
+        & a, p {
+            font-size: 13px;
+        }
+    }
+}

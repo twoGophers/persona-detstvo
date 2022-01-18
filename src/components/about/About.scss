@@ -4,9 +4,88 @@
     background: -o-linear-gradient(312.36deg,#7ebfb3 0,#8fceca 97.97%);
     background: linear-gradient(137.64deg,#7ebfb3 0,#8fceca 97.97%);
     position: relative;
-    margin-top: 0;
-    padding-bottom: 195px;
+    padding-bottom: 60vh;
     z-index: 1;
     margin-top: -180px;
-    padding-top: 145px;
+    padding-top: 30vh;
+    .about-body {
+        display: flex;
+        flex-direction: column;
+        &__title {
+            display: flex;
+            flex-direction: row;
+            .about-body__title-title {
+                width: 75%;
+                display: flex;
+            }
+            .about-body__title-content {
+                width: 25%;
+                display: flex;
+                flex-direction: column;
+                .about-body__link {
+                    color: #81b3ff;
+                }
+            }
+        }
+        &__img {
+            margin-top: 20vh;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+@media screen and (max-width: 1111px) {
+    .section__green {
+        height: 50vh;
+        .about-body {
+            .about-body__title {
+                .about-body__title-title {
+                    width: 60%;
+                }
+                .about-body__title-content {
+                    width: 40%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 420px)  {
+    .section__green {
+        padding-top: 15%;
+        padding-bottom: 10vh;
+        z-index: 50;
+        height: 115vh;
+        .about-body {
+            display: flex;
+            flex-direction: column;
+            .about-body__title {
+                display: flex;
+                flex-direction: column;
+                .about-body__title-title {
+                    width: 75%;
+                    display: flex;
+                }
+                .about-body__title-content {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    .about-body__link {
+                        color: #81b3ff;
+                    }
+                }
+            }
+            .about-body__img {
+                margin-top: 50%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                & img {
+                    width: 80%;
+                }
+            }
+        }
+    }
 }

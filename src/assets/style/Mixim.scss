@@ -12,9 +12,13 @@ $fz22 : 22px;
 $fz26 : 26px;
 $fz30 : 30px;
 $fz36 : 36px;
+$fz40 : 40px;
+$fz48 : 48px;
 $fz50 : 50px;
 $fz64 : 64px;
 $fz74 : 74px;
+$fz90 : 7vw;
+$fz116 : 116px;
 
 $fzh15 : 15vh; 
 $fzh20 : 20vh; 
@@ -34,8 +38,11 @@ $lh30 : 30px;
 $lh38 : 38px;
 $lh40 : 40px;
 $lh46 : 46px;
+$lh52 : 52px;
 $lh60 : 60px;
 $lh70 : 70px;
+$lh100 : 8vw;
+$lh116 : 116px;
 
 
 @mixin font ($fz14, $fw, $lh, $fsn) {
@@ -52,7 +59,7 @@ $fdc : column;
 $jcc : center;
 $jcsb : space-between;
 $jcfe : flex-end;
-$fdc : flex-start;
+$fds : flex-start;
 $aic : center;
 $aife : flex-end;
 $aifs : flex-start;

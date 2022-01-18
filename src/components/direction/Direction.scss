@@ -4,9 +4,134 @@
     background: -o-linear-gradient(312.36deg,#ff9e80 0,#ffc9ab 97.97%);
     background: linear-gradient(137.64deg,#ff9e80 0,#ffc9ab 97.97%);
     position: relative;
-    margin-top: 0;
-    padding-bottom: 195px;
+    padding-bottom: 40vh;
     z-index: 1;
-     margin-top: -180px;
+    margin-top: -31vh;
     padding-top: 145px;
+    .direction-body {
+        display: flex;
+        flex-direction: column;
+        .direction-body__title {}
+        .direction-body__slider{
+            height: 100%;
+            .mySwiper {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                .mySwiper__img {
+                    height: 100%;
+                    width: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    & img {
+                        width: 50vh;
+                    }
+                }
+                .mySwiper__content {
+                    height: 80%;
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: flex-start;
+
+                    .mySwiper__title {
+                        text-align: start;
+                        width: 100%;
+                    }
+                    .mySwiper__content-text {
+                        text-align: start;
+                        width: 60%;
+                    }
+                    .btn-analysez {
+                        width: 70%;
+                        padding: 20px 24px;
+                        color: #ff9e80;
+                    }
+                }
+            }
+        }
+    }
 }
+
+@media screen and (max-width: 1150px) {
+    .section__orange {
+        .direction-body{
+            .direction-body__slider {
+                .mySwiper {
+                    .mySwiper__img {
+                        display: flex;
+                        & img {
+                            width: 70%;
+                            height: 70%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .section__orange {
+        padding-top: 20%;
+        z-index: 50;
+        padding-bottom: 0vh;
+        margin-top: -8vh;
+        .direction-body{
+            display: flex;
+            justify-content: flex-start;
+            .direction-body__title {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            .direction-body__slider {
+                height: auto;
+                .mySwiper {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    flex-wrap: wrap;
+                    .mySwiper__img {
+                        //margin-top: -40px;
+                        height: 100%;
+                        width: 70%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+                        & img {
+                            width: 70%;
+                            height: 100%;
+                        }
+                    }
+                    .mySwiper__content {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        .mySwiper__title {
+                            text-align: center;
+                            width: 100%;
+                        }
+                        .mySwiper__content-text {
+                            text-align: start;
+                            width: 100%;
+                            margin: 2%;
+                        }
+                        .btn-analysez {
+                            width: 100%;
+                            padding: 20px 24px;
+                            color: #ff9e80;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

@@ -5,8 +5,37 @@
     background: linear-gradient(137.64deg,#b4a6ff 14.8%,#c7bcff 97.97%);
     position: relative;
     margin-top: 0;
-    padding-bottom: 195px;
+    padding-bottom: 10vh;
     z-index: 1;
-    margin-top: -180px;
-    padding-top: 145px;
+    padding-top: 30vh;
+    .reviews-body {
+        .reviews-body__content {
+            width: 70%;
+        }
+        .reviews-body__link{
+            color: #c7bcff;
+        }
+    }
+}
+
+
+@media screen and (max-width: 420px) {
+    .section__purple {
+        background: -o-linear-gradient(312.36deg,#b4a6ff 14.8%,#c7bcff 97.97%);
+        background: linear-gradient(137.64deg,#b4a6ff 14.8%,#c7bcff 97.97%);
+        position: relative;
+        z-index: 55;
+        padding-top: 10vh;
+        height: 70vh;
+        .reviews-body {
+            height: auto;
+            .reviews-body__content {
+                width: 100%;
+            }
+            .reviews-body__link{
+                color: #c7bcff;
+            }
+        }
+    }
+    
 }
