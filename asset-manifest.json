@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/persona-detstvo/static/css/main.ed683d65.css",
+    "main.js": "/persona-detstvo/static/js/main.2ecced4e.js",
+    "static/js/787.d805fa6d.chunk.js": "/persona-detstvo/static/js/787.d805fa6d.chunk.js",
+    "static/media/Skater1.png": "/persona-detstvo/static/media/Skater1.e62ffe08d8e621596122.png",
+    "static/media/Doctor.png": "/persona-detstvo/static/media/Doctor.1f7cf57dfc20e9cdf531.png",
+    "static/media/about-first.png": "/persona-detstvo/static/media/about-first.da69782e8852447db961.png",
+    "static/media/Girl4.png": "/persona-detstvo/static/media/Girl4.1d122e02f3e7bb66251b.png",
+    "static/media/services-header.png": "/persona-detstvo/static/media/services-header.bb20d8c062e7c69d6184.png",
+    "static/media/Baby0-1.png": "/persona-detstvo/static/media/Baby0-1.ff171a5dfeb03b9413c5.png",
+    "static/media/Analyzes.png": "/persona-detstvo/static/media/Analyzes.51f861ab5644e056f7be.png",
+    "static/media/4firstaidkit.png": "/persona-detstvo/static/media/4firstaidkit.03901a20a79b449d5392.png",
+    "static/media/ultrasound.png": "/persona-detstvo/static/media/ultrasound.05f48c94e3c40bb0b756.png",
+    "static/media/syringe.png": "/persona-detstvo/static/media/syringe.4dde645cfb4088b5715d.png",
+    "static/media/stethoscope.png": "/persona-detstvo/static/media/stethoscope.e73f7cef60f2a22994c4.png",
+    "static/media/logo.svg": "/persona-detstvo/static/media/logo.1d27b241b3481666b6e614ec06acda5b.svg",
+    "static/media/emergency-help.svg": "/persona-detstvo/static/media/emergency-help.5fef0b2fab7ad92d4e7329e092040775.svg",
+    "static/media/phone-orange.svg": "/persona-detstvo/static/media/phone-orange.bfff2006161d8e1d4c23b6cce281a800.svg",
+    "static/media/pen-white.svg": "/persona-detstvo/static/media/pen-white.3157ef8daad5e085eb92f02c53cf1106.svg",
+    "index.html": "/persona-detstvo/index.html",
+    "static/media/search-orange.svg": "/persona-detstvo/static/media/search-orange.6a2751b9afd2a865ccb198130b669422.svg",
+    "main.ed683d65.css.map": "/persona-detstvo/static/css/main.ed683d65.css.map",
+    "main.2ecced4e.js.map": "/persona-detstvo/static/js/main.2ecced4e.js.map",
+    "787.d805fa6d.chunk.js.map": "/persona-detstvo/static/js/787.d805fa6d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ed683d65.css",
+    "static/js/main.2ecced4e.js"
+  ]
+}
