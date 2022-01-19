@@ -51,7 +51,9 @@ export default function Reviews() {
                 <div className="section__content reviews-body__content">
                     «Персона Детство» — клиника уверенных родителей! С нашими экспертами-врачами вы можете быть спокойными за здоровье вашего ребенка.
                 </div>
-                <a href="/" className='btn btn-font reviews-body__link'>Что говорят пациенты</a>
+                <div className="reviews-body__link">
+                    <a href="/" className='btn btn-font reviews__link'>Что говорят пациенты</a>
+                </div>
             </div>
         </section>
     )

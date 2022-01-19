@@ -6,8 +6,9 @@ import search_phone from '../../assets/images/phone-orange.svg';
 import emergency_help from '../../assets/images/emergency-help.svg';
 import about_first from '../../assets/images/about-first.png';
 import headerPencil from '../../assets/images/pen-white.svg';
+import ModalHeader from '../Modal/ModalHeader';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 
 function Header () {
     
@@ -20,81 +21,131 @@ function Header () {
             transform: 'rotate(45deg)'
         });
 
-    let services_list = [
-        {id : 1, name : 'Прием в клинике' },
-        {id : 2, name : 'Патронаж' },
-        {id : 3, name : 'Анализы' },
-        {id : 4, name : 'УЗИ' },
-        {id : 5, name : 'Вакцинация' },
-        {id : 6, name : 'Ренген' },
-        {id : 7, name : 'Онлайн-консультация' },
-        {id : 8, name : 'Вызов врача на дом' },
-        {id : 9, name : 'Справки, медосмотры' },
-        {id : 10, name : 'Массаж' },
-        {id : 11, name : 'Физиотерапия' },
-        {id : 12, name : 'Школа будущих родителей' },
-        {id : 13, name : 'Комплексные программы' },
+    let list = [
+        {
+            id : 1, 
+            status : false, 
+            listItem : [
+                {id : 1, name : 'Прием в клинике' },
+                {id : 2, name : 'Патронаж' },
+                {id : 3, name : 'Анализы' },
+                {id : 4, name : 'УЗИ' },
+                {id : 5, name : 'Вакцинация' },
+                {id : 6, name : 'Ренген' },
+                {id : 7, name : 'Онлайн-консультация' },
+                {id : 8, name : 'Вызов врача на дом' },
+                {id : 9, name : 'Справки, медосмотры' },
+                {id : 10, name : 'Массаж' },
+                {id : 11, name : 'Физиотерапия' },
+                {id : 12, name : 'Школа будущих родителей' },
+                {id : 13, name : 'Комплексные программы' }, 
+            ],
+        },
+        {
+            id : 2, 
+            status : false, 
+            listItem : [
+                {id : 1, name : 'О нас' },
+                {id : 2, name : 'Пациентам' },
+                {id : 3, name : 'Новости' },
+                {id : 4, name : 'Справочник родителя' },
+                {id : 5, name : 'Статьи' },
+            ],
+        },
+
     ];
 
-    let clinick_list = [
-        {id : 1, name : 'О нас' },
-        {id : 2, name : 'Пациентам' },
-        {id : 3, name : 'Новости' },
-        {id : 4, name : 'Справочник родителя' },
-        {id : 5, name : 'Статьи' },
-    ];
+//Mobile modal
 
+    const [activeModalHeader, setActiveModalHeader] = useState(false);
+
+    let modal_header_fixed = () => {
+        let header = document.querySelector('.header');
+        header.style.position = 'fixed';
+    }
+
+    let modal_header_absolute = () => {
+        let header = document.querySelector('.header');
+        header.style.position = 'absolute';
+    }
+
+//Click navigation show window
+    const [activeModalClick, setActiveModalClick] = useState(false);
+    const [activeModalClickClinick, setActiveModalClinick] = useState(false);
 
     function showListServ () {
-        
-        let header_servise_service = document.querySelector('.header-servise-service');
-            header_servise_service.classList.toggle('show');
-
-        let header_service_body = document.querySelector('.header-service-body');
-            header_service_body.addEventListener('mouseleave', () => {
-                header_servise_service.addEventListener('mouseleave', () =>{
-                    header_servise_service.classList.add('hide');
-                    header_servise_service.classList.remove('show');
-                    setarrowTransform({
-                        transform: 'rotate(45deg)'
-                    });
-                })
-        });
-
-        let header_servise_clinick = document.querySelector('.header-servise-clinick');
-            header_servise_clinick.classList.add('hide');
-            header_servise_clinick.classList.remove('show');
-
+        if(activeModalClick) {
+            setActiveModalClick(false);
             setarrowTransform({
-                transform: 'rotate(-135deg)'
+                transform: 'rotate(45deg)' 
             });
+        } else {
+            setActiveModalClick(true);
+            setarrowTransform({
+                transform: 'rotate(-135deg)' 
+            });
+        };
 
+        setActiveModalClinick(false);
+        setarrowTransformClinic({
+            transform: 'rotate(45deg)'
+        });
     };
 
     function showListClinic() {
-        let header_servise_clinick = document.querySelector('.header-servise-clinick');
-        header_servise_clinick.classList.toggle('show');
+        
+        if(activeModalClickClinick) {
+            setActiveModalClinick(false);
+            setarrowTransformClinic({
+                transform: 'rotate(45deg)' 
+            });
+        } else {
+            setActiveModalClinick(true);
+            setarrowTransformClinic({
+                transform: 'rotate(-135deg)'
+            });
+        };
 
-
-        let header_service_body = document.querySelector('.header-service-body');
-        header_service_body.addEventListener('mouseleave', () => {
-            header_servise_clinick.addEventListener('mouseleave', () =>{
-                header_servise_clinick.classList.add('hide');
-                header_servise_clinick.classList.remove('show');
-                setarrowTransformClinic({
-                    transform: 'rotate(45deg)'
-                });
-            })
-        });
-
-        let header_servise_service = document.querySelector('.header-servise-service');
-        header_servise_service.classList.add('hide');
-        header_servise_service.classList.remove('show');
-
-        setarrowTransformClinic({
-            transform: 'rotate(-135deg)'
+        setActiveModalClick(false);
+        setarrowTransform({
+            transform: 'rotate(45deg)'
         });
     };
+
+    console.log();
+// Navigation
+    function ItemNavigation() {
+        return (
+            <div className= 'header-navigation '>
+                <div className='header-dropdown header-menu-item'>
+                    <button className='header-dropdown-btn' id='oneBlock' 
+                    // onClick={showListServ}
+                    onClick={() => {
+                        showListServ();
+                    }}
+                    >
+                        <span >Услуги</span>
+                        <div className= 'arrow arrow-down ' style={arrowTransform}></div>
+                    </button>
+                </div>
+                <div className='header-dropdown header-menu-item'>
+                    <button className='header-dropdown-btn 'id='twoBlock' 
+                    onClick={() => {
+                        showListClinic();
+                    }}
+                    >
+                        <span >Клиника</span>
+                        <div className= 'arrow arrow-down ' style={arrowTransformClinic}></div>
+                    </button>
+                </div>
+                <a href= '/ '>Наши врачи</a>
+                <a href= '/ '>Акции</a>
+                <a href= '/ '>Отзывы</a>
+                <a href= '/ '>Контакты</a>
+            </div>
+        )
+    }
+
 
 
     return (
@@ -105,24 +156,7 @@ function Header () {
                             <img src={logo} alt={logo} />
                     </a>        
                 </div>
-                <div className= 'header-navigation '>
-                    <div className='header-dropdown header-menu-item'>
-                        <button className='header-dropdown-btn' id='oneBlock' onClick={showListServ}>
-                            <span >Услуги</span>
-                            <div className= 'arrow arrow-down ' style={arrowTransform}></div>
-                        </button>
-                    </div>
-                    <div className='header-dropdown header-menu-item'>
-                        <button className='header-dropdown-btn 'id='twoBlock' onClick={showListClinic}>
-                            <span >Клиника</span>
-                            <div className= 'arrow arrow-down ' style={arrowTransformClinic}></div>
-                        </button>
-                    </div>
-                    <a href= '/ '>Наши врачи</a>
-                    <a href= '/ '>Акции</a>
-                    <a href= '/ '>Отзывы</a>
-                    <a href= '/ '>Контакты</a>
-                </div>
+                {ItemNavigation()}
                 <div className= 'header-contact '>
                     <img src={search_orange} alt={search_orange} />
                     <img src={search_phone} alt={search_phone}  />
@@ -132,7 +166,16 @@ function Header () {
                             <svg className="header-recorting__singUp-svg" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.178 2.695L13.03.66a1.822 1.822 0 00-1.418.055c-.466.21-.85.593-1.067 1.064L4.687 14.478c-.03.055-.057.112-.078.17a.755.755 0 00-.106.31.663.663 0 00.04.312l1.704 4.364c.138.322.392.569.714.696.322.128.69.126 1.037-.004l4.597-1.873a.78.78 0 00.439-.474c.03-.055.057-.112.079-.17l5.857-12.7c.214-.46.25-.971.102-1.422a1.622 1.622 0 00-.894-.992zm-1.53 2.464l-3.666 7.949a.567.567 0 01-.278.276.502.502 0 01-.187.045.446.446 0 01-.181-.03l-3.617-1.43a.42.42 0 01-.244-.256.507.507 0 01.024-.377l3.667-7.95a.564.564 0 01.277-.276.473.473 0 01.369-.014l3.617 1.43a.418.418 0 01.243.256c.02.059.03.122.025.187a.535.535 0 01-.049.19zM8.006 17.715l-1.016-2.63a.66.66 0 01.007-.493l.305-.661 4.483 1.772-.305.661a.75.75 0 01-.393.374l-2.745 1.118a.268.268 0 01-.203.005.24.24 0 01-.136-.14l.003-.006z" fill="#fff"/></svg>
                         </button>
                     </div>
-                    <div className="header-burger">
+                    <div className="header-burger" 
+                    onClick={() => {
+                        setActiveModalHeader(true);
+                        if(activeModalHeader) {
+                            modal_header_absolute();
+                            setActiveModalHeader(false);
+                        } else {
+                            modal_header_fixed();
+                        }
+                    }}>
                         <div className="menu-icon">
                             <input className="menu-icon__cheeckbox" type="checkbox" />
                             <div>
@@ -149,9 +192,17 @@ function Header () {
 
 
             <div className= 'header-service-body '>
-                <div className= 'header-servise hide header-servise-service' >
-                    <div className= 'header-servise-list '>
-                        {services_list.map(item => (
+                {/* Service block */}
+                <div 
+                    className= {activeModalClick ? 'header-servise show header-servise-list' : 'header-servise hide header-servise-list'}
+                    onMouseLeave={() => {
+                        setActiveModalClick(false);
+                        setarrowTransform({
+                            transform: 'rotate(45deg)'
+                        });
+                        }}>
+                    <div className= 'header-servise-list' onClick={(e) => e.stopPropagation()}>
+                        {list[0].listItem.map(item => (
                             <a className='header-servise-link hoverLink' href= '/ ' key={item.id}>{item.name}</a>
                         ))}
                     </div>
@@ -159,9 +210,18 @@ function Header () {
                         <img className= 'header-servise-img__keys' src={services_header} alt={services_header} />
                     </div>
                 </div>
-                <div className= 'header-servise hide header-servise-clinick '>
+
+                {/* Clinick block */}
+                <div 
+                    className= {activeModalClickClinick ? 'header-servise show header-servise-clinick' : 'header-servise hide header-servise-clinick ' }
+                    onMouseLeave={() => {
+                            setActiveModalClinick(false);
+                            setarrowTransformClinic({
+                                transform: 'rotate(45deg)'
+                            });
+                        }}>
                     <div className= 'header-servise-list '>
-                        {clinick_list.map(item => (
+                        {list[1].listItem.map(item => (
                             <a className='header-servise-link hoverLink clinick-color' href= '/ ' key={item.id}>{item.name}</a>
                         ))}
                     </div>
@@ -170,6 +230,13 @@ function Header () {
                     </div>
                 </div>
             </div>
+
+            <ModalHeader 
+                active={activeModalHeader}
+                setActive={setActiveModalHeader}
+                listItem={list}
+                >
+            </ModalHeader>
 
         </section>
     )

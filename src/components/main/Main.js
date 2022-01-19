@@ -241,6 +241,10 @@ export default function Main() {
         header.style.display = 'none';
     }
 
+//Style active modal
+
+// Body mobile
+
     let main__item__mobile = styleItem.main__block_age_list.map((item, index) => (
         <div name={item.id} className="main-block__mobile main-block__mobile-passive"   
         key={item.id} 
@@ -272,6 +276,9 @@ export default function Main() {
             </div>
         </div> 
     ));
+    
+    
+
 
     return (
         <div className='main'>
@@ -314,4 +321,5 @@ export default function Main() {
             </ModalItem>
         </div>
     )
+
 }

@@ -16,6 +16,7 @@ let showHeader = () => {
 }
 
     return (
+
         <div className={active ? 'modal-item active' : 'modal-item'} 
                 style={{background : color}}
                 onClick={() => setActive(false)}

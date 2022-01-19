@@ -160,7 +160,7 @@
                 justify-content: center;
                 // 	for demo
                 .menu-icon {
-                    transform: scale(1.5);
+                    transform: scale(1.1);
                 }
             }
             
@@ -272,6 +272,7 @@
                 flex-direction: column;
                 flex-wrap: wrap;
                 height: 40vh;
+                z-index: 50;
                 & a {
                     @include font ($fz22, $fw7, $lh20, $fsn);
                     font-family: $ffr;
@@ -301,7 +302,7 @@
                 display: flex;
                 position: absolute;
                 top: 10%;
-                right: 8%;
+                right: 5%;
                 z-index: 1;
                 & img {
                     width: 100%;

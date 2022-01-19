@@ -1,0 +1,118 @@
+@import '../../assets/style/Imports.scss';
+@import '../header/Header.scss';
+
+$orangeColor : #ff9e80;
+$greenColor : #7ebfb3;
+
+.modal-header {
+    display: none;
+}
+
+
+@media screen and (max-width: 420px) {
+    .modal-header.modal-header-active {
+        transform: scale(1);
+    }
+    .modal-header{
+        width: 100%;
+        height: 100vh;
+        background-color: #f5f6f9;
+        top: 0;
+        left: 0;
+        display: flex;
+        position: fixed;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        transform: scale(0);
+        outline: 2vh solid white;
+        margin-top: -2vh;
+        overflow: auto;
+        a, span {
+            font-size: 5vw;
+        }
+        .modal-header-body {
+            width: 100%;
+            height: 80%;
+            margin-top: 20%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            .modal-navigation {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .modal-navigation__servise, .modal-navigation__clinick {
+                    width: 80vw;
+                    padding: 13px 1px;
+                    margin: 2%;
+                }
+                .modal-navigation__servise {
+                    span {
+                        color: $orangeColor;
+                    }
+                }
+                .modal-navigation__clinick  {
+                    span {
+                        color: $greenColor;
+                    }
+                }
+                .modal-service {
+                    flex-direction: column;
+                    margin: 2%;
+                    width: 100%;
+                    a {
+                        margin: 2%;
+                    }
+                    
+                }
+                .modal-links {
+                    margin-top: 5%;
+                }
+                .mod-service, .mod-clinick {
+                    overflow: hidden;
+                    position: relative;
+                    transition: 2s all;
+
+                    animation-fill-mode: both;
+                    animation: 1s showServiseAndClinick  ease-out;
+                    a {
+                        color: $orangeColor;
+                    }
+                }
+                
+                @keyframes showServiseAndClinick {
+                    0%{height:  0%; opacity: 0;}
+                    100%{height: 100%; opacity: 1;}
+                }
+
+                .mod-clinick {
+                    a {
+                        color: $greenColor;
+                    }
+                }
+                
+            }
+        }
+    }
+    .arrow {
+        border: solid #ffa180;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        margin-left: 5px;
+        transition: 0.3s;
+    }
+    .arrow-green {
+        border: solid $greenColor;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        margin-left: 5px;
+        transition: 0.3s;
+    }
+}
+
+
