@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/persona-detstvo/static/css/main.ed683d65.css",
-    "main.js": "/persona-detstvo/static/js/main.2ecced4e.js",
+    "main.css": "/persona-detstvo/static/css/main.1450cd3c.css",
+    "main.js": "/persona-detstvo/static/js/main.dff1210e.js",
     "static/js/787.d805fa6d.chunk.js": "/persona-detstvo/static/js/787.d805fa6d.chunk.js",
     "static/media/Skater1.png": "/persona-detstvo/static/media/Skater1.e62ffe08d8e621596122.png",
     "static/media/Doctor.png": "/persona-detstvo/static/media/Doctor.1f7cf57dfc20e9cdf531.png",
@@ -20,12 +20,12 @@
     "static/media/pen-white.svg": "/persona-detstvo/static/media/pen-white.3157ef8daad5e085eb92f02c53cf1106.svg",
     "index.html": "/persona-detstvo/index.html",
     "static/media/search-orange.svg": "/persona-detstvo/static/media/search-orange.6a2751b9afd2a865ccb198130b669422.svg",
-    "main.ed683d65.css.map": "/persona-detstvo/static/css/main.ed683d65.css.map",
-    "main.2ecced4e.js.map": "/persona-detstvo/static/js/main.2ecced4e.js.map",
+    "main.1450cd3c.css.map": "/persona-detstvo/static/css/main.1450cd3c.css.map",
+    "main.dff1210e.js.map": "/persona-detstvo/static/js/main.dff1210e.js.map",
     "787.d805fa6d.chunk.js.map": "/persona-detstvo/static/js/787.d805fa6d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ed683d65.css",
-    "static/js/main.2ecced4e.js"
+    "static/css/main.1450cd3c.css",
+    "static/js/main.dff1210e.js"
   ]
 }
