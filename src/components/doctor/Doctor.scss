@@ -45,7 +45,7 @@
 
 @media screen and (max-width: 420px) {
     .doctor {
-        margin-top: 20%;
+        margin-top: 40%;
         padding-top: 10%;
         padding-bottom: 1vh;
         z-index: 50;
@@ -58,6 +58,7 @@
                 width: 100%;
                 .doctor-body__link {
                     width: 100%;
+                    text-align: center;
                 }
             }
             .doctor-body__img {

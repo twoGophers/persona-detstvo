@@ -75,7 +75,7 @@ let scrollHandlerDoctor = () => {
                     <div className="doctor-body__content section__content">
                         Детская клиника «Персона Детство»&nbsp;— это врачи <br/>различных специальностей, широкий спектр услуг,<br/> современное оборудование и&nbsp;уникальный дизайн. <br />С любовью и&nbsp;заботой к&nbsp;каждой маленькой Персоне.
                     </div>
-                    <a href="/" className='btn btn-font doctor-body__link'>Познакомиться с врачами</a>
+                    <a href="/" className='btn doctor-body__link'>Познакомиться с врачами</a>
                 </div>
                 <div className="doctor-body__img" style={{marginTop : scrollBlock + 'px'}}>
                     <img src={Doctor_img} alt={Doctor_img} />
