@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef} from 'react';
 import './ModalHeader.scss';
+import search_orange from '../../assets/images/search-orange.svg';
+import baby from '../../assets/images/Baby0-1.png';
 
+export default function ModalHeader({active, setActive, listItem, iconSearch, iconPhone, iconBurger}) {
 
-export default function ModalHeader({active, setActive, listItem}) {
-// Style vector active
+    // Style vector active
     let transformDown = {
         transform: 'rotate(45deg)'
     };
@@ -52,12 +54,24 @@ export default function ModalHeader({active, setActive, listItem}) {
         }, path : '/'},
     ];
 
+// Modal search
+
+    let refSearchInput = useRef();
+    let [showTitleSearch, setShowTitleSearch] = useState(false);
+
+    let searchModal = () => {
+        if(refSearchInput.current.value) {
+            setShowTitleSearch(true);
+        }
+        return refSearchInput.current.value = '';
+    }
+    
     return (
         <div  className={active ? "modal-header modal-header-active" : "modal-header"} 
         //onClick={() => setActive(false)}
         >
             <div className="modal-header-body" onClick={(e) => e.stopPropagation()}>
-                <div className="modal-navigation">
+                <div className={iconBurger ? "modal-navigation modal-active" : "hide"}>
                     <div className="btn modal-navigation__servise" 
                         onClick={() => { showModalService()}}>
                         <span>Услуги</span>
@@ -83,6 +97,32 @@ export default function ModalHeader({active, setActive, listItem}) {
                             <a href={path} style={style}>{text}</a>
                         </div>
                     ))}
+                </div>
+                <div className={iconSearch ? "modal-search modal-active" : " hide"}>
+                    <div className="modal-search-title">
+                        <h1>Поиск</h1>
+                    </div>
+                    <div className="title-search">
+                        <input type="text" ref={refSearchInput} placeholder='Что будем искать?' onKeyPress={(e) => e.key === 'Enter' && searchModal()} />
+                        <img src={search_orange} alt={search_orange} onClick={() => searchModal()} />
+                    </div>
+                    <div className={showTitleSearch ? "mod-search-title show" : "mod-search-title hide"}>
+                        <h1>К сожалению временно не работает...</h1>
+                    </div>
+                </div>
+                <div className={iconPhone ? "modal-contact modal-active" : "hide"}>
+                    <div className="modal-contact-title">
+                        <h1>Связатсься с клиникой</h1>
+                    </div>
+                    <div className="modal-contact-title modal-contact-phone">
+                        <h1>8(901)000-00-00</h1>
+                    </div>
+                    <div className="modal-contact-title modal-contact-phone">
+                        <h1>Позвоните мне</h1>
+                    </div>
+                    <div className="modal-contact-img">
+                        <img src={baby} alt={baby} />
+                    </div>
                 </div>
             </div>
         </div>

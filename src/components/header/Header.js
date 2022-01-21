@@ -7,6 +7,8 @@ import emergency_help from '../../assets/images/emergency-help.svg';
 import about_first from '../../assets/images/about-first.png';
 import headerPencil from '../../assets/images/pen-white.svg';
 import ModalHeader from '../Modal/ModalHeader';
+import Burger from '../../assets/images/menu-orange.svg';
+import CloseMobile from '../../assets/images/close-white.svg';
 
 import React, { useState, useEffect, useRef} from 'react';
 
@@ -112,7 +114,6 @@ function Header () {
         });
     };
 
-    console.log();
 // Navigation
     function ItemNavigation() {
         return (
@@ -146,7 +147,55 @@ function Header () {
         )
     }
 
+//Header modal
 
+    //Background
+    let [iconSearch, setIconSearch] = useState(false);
+    let [iconPhone, setIconPhone] = useState(false);
+    let [iconBurger, setIconBurger] = useState(false);
+
+    // let fixedModal = () => {
+    //     if(activeModalHeader) {
+    //         modal_header_absolute();
+    //     } else {
+    //         modal_header_fixed();
+    //     }
+    // };
+
+//Orange
+    let handlerSearchOrange = () => {
+        setIconBurger(false);
+        setIconSearch(true);
+        setIconPhone(false);
+        if(iconSearch) {
+            setIconSearch(false);
+        };
+        setActiveModalHeader(true);
+        modal_header_fixed();
+    };
+//Phone
+    let handlerSearchPhone = () => {
+        setIconBurger(false);
+        setIconSearch(false);
+        setIconPhone(true);
+        if(iconPhone) {
+            setIconPhone(false);
+        };
+        setActiveModalHeader(true);
+        modal_header_fixed();
+    };
+
+//Burger
+    let handlerSearchBurger = () => {
+        setIconBurger(true);
+        setIconPhone(false);
+        setIconSearch(false);
+        if(iconBurger) {
+            setIconBurger(false);
+        };
+        setActiveModalHeader(true);
+        modal_header_fixed();
+    };
 
     return (
         <section className='header'>
@@ -158,31 +207,42 @@ function Header () {
                 </div>
                 {ItemNavigation()}
                 <div className= 'header-contact '>
-                    <img src={search_orange} alt={search_orange} />
-                    <img src={search_phone} alt={search_phone}  />
-                    <div className= 'header-recording '>
+                    <div className={iconSearch ? " bg-icon-active" : "bg-icon "} 
+                    style={{backgroundImage : iconSearch ? `url('${CloseMobile}')` : `url('${search_orange}')`}}
+                        onClick={() => {
+                            handlerSearchOrange();
+                            if(iconSearch) {
+                                setActiveModalHeader(false);
+                                modal_header_absolute();
+                            }
+                        }} >   
+                    </div>
+                    <div className={iconPhone ? "bg-icon-active" : "bg-icon "}  
+                    style={{backgroundImage : iconPhone ? `url('${CloseMobile}')` : `url('${search_phone}')`}}
+                        onClick={() => {
+                            handlerSearchPhone();
+                            if(iconPhone) {
+                                setActiveModalHeader(false);
+                                modal_header_absolute();
+                            }
+                        }}>
+                        
+                    </div>
+                    <div className= 'header-recording'>
                         <button  className='btn btn-bg header-recorting-btn'> 
                             <div className="header-recorting__singUp">Записаться</div> 
                             <svg className="header-recorting__singUp-svg" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.178 2.695L13.03.66a1.822 1.822 0 00-1.418.055c-.466.21-.85.593-1.067 1.064L4.687 14.478c-.03.055-.057.112-.078.17a.755.755 0 00-.106.31.663.663 0 00.04.312l1.704 4.364c.138.322.392.569.714.696.322.128.69.126 1.037-.004l4.597-1.873a.78.78 0 00.439-.474c.03-.055.057-.112.079-.17l5.857-12.7c.214-.46.25-.971.102-1.422a1.622 1.622 0 00-.894-.992zm-1.53 2.464l-3.666 7.949a.567.567 0 01-.278.276.502.502 0 01-.187.045.446.446 0 01-.181-.03l-3.617-1.43a.42.42 0 01-.244-.256.507.507 0 01.024-.377l3.667-7.95a.564.564 0 01.277-.276.473.473 0 01.369-.014l3.617 1.43a.418.418 0 01.243.256c.02.059.03.122.025.187a.535.535 0 01-.049.19zM8.006 17.715l-1.016-2.63a.66.66 0 01.007-.493l.305-.661 4.483 1.772-.305.661a.75.75 0 01-.393.374l-2.745 1.118a.268.268 0 01-.203.005.24.24 0 01-.136-.14l.003-.006z" fill="#fff"/></svg>
                         </button>
                     </div>
-                    <div className="header-burger" 
-                    onClick={() => {
-                        setActiveModalHeader(true);
-                        if(activeModalHeader) {
-                            modal_header_absolute();
-                            setActiveModalHeader(false);
-                        } else {
-                            modal_header_fixed();
-                        }
-                    }}>
-                        <div className="menu-icon">
-                            <input className="menu-icon__cheeckbox" type="checkbox" />
-                            <div>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </div>
+                    <div className={iconBurger ? "header-burger bg-icon-active" : "header-burger bg-icon"} 
+                        style={{backgroundImage : iconBurger ? `url('${CloseMobile}')` : `url('${Burger}')`}}
+                        onClick={() => {
+                            handlerSearchBurger();
+                            if(iconBurger) {
+                                setActiveModalHeader(false);
+                                modal_header_absolute();
+                            }
+                            }}>
                     </div>
                     <div className= 'header-help btn btn-bg '>
                         <img src={emergency_help} alt={emergency_help} />
@@ -235,6 +295,9 @@ function Header () {
                 active={activeModalHeader}
                 setActive={setActiveModalHeader}
                 listItem={list}
+                iconSearch={iconSearch}
+                iconPhone={iconPhone}
+                iconBurger={iconBurger}
                 >
             </ModalHeader>
 
