@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/persona-detstvo/static/css/main.6d3367c5.css",
-    "main.js": "/persona-detstvo/static/js/main.021b038b.js",
+    "main.css": "/persona-detstvo/static/css/main.25e82cda.css",
+    "main.js": "/persona-detstvo/static/js/main.2c95012e.js",
     "static/js/787.d805fa6d.chunk.js": "/persona-detstvo/static/js/787.d805fa6d.chunk.js",
     "static/media/Skater1.png": "/persona-detstvo/static/media/Skater1.e62ffe08d8e621596122.png",
     "static/media/Doctor.png": "/persona-detstvo/static/media/Doctor.1f7cf57dfc20e9cdf531.png",
@@ -19,13 +19,15 @@
     "static/media/phone-orange.svg": "/persona-detstvo/static/media/phone-orange.bfff2006161d8e1d4c23b6cce281a800.svg",
     "static/media/pen-white.svg": "/persona-detstvo/static/media/pen-white.3157ef8daad5e085eb92f02c53cf1106.svg",
     "index.html": "/persona-detstvo/index.html",
+    "static/media/close-white.svg": "/persona-detstvo/static/media/close-white.e445982c4b0f3cc57f4b7577ee67347f.svg",
+    "static/media/menu-orange.svg": "/persona-detstvo/static/media/menu-orange.9d40ff8aeaf466d5fe99708bd62475fc.svg",
     "static/media/search-orange.svg": "/persona-detstvo/static/media/search-orange.6a2751b9afd2a865ccb198130b669422.svg",
-    "main.6d3367c5.css.map": "/persona-detstvo/static/css/main.6d3367c5.css.map",
-    "main.021b038b.js.map": "/persona-detstvo/static/js/main.021b038b.js.map",
+    "main.25e82cda.css.map": "/persona-detstvo/static/css/main.25e82cda.css.map",
+    "main.2c95012e.js.map": "/persona-detstvo/static/js/main.2c95012e.js.map",
     "787.d805fa6d.chunk.js.map": "/persona-detstvo/static/js/787.d805fa6d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6d3367c5.css",
-    "static/js/main.021b038b.js"
+    "static/css/main.25e82cda.css",
+    "static/js/main.2c95012e.js"
   ]
 }
