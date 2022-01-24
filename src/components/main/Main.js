@@ -5,12 +5,25 @@ import girl from '../../assets/images/Girl4.png';
 import boy from '../../assets/images/Skater1.png';
 import Btn_icon from '../ui/Btn_icon';
 import ModalItem from '../Modal/ModalItem';
-
 //
 import { useState, useEffect} from 'react';
 import {Link} from 'react-scroll';
 
+
+import { useDispatch, useSelector } from 'react-redux';
 export default function Main() {
+    //Redux
+    let dispatch = useDispatch();
+    let showModalRedux = () => {
+        dispatch({
+            type: "SHOW_MODAL", 
+            payload : true, 
+            title : 'Последние события и акции',
+            mainModal : true
+        })
+    };
+    
+
 
     //Hoock
 
@@ -92,11 +105,11 @@ export default function Main() {
     
 
     let style__item = (positionRight, index) => {
-        if( index === 0 && styleItem.main__block_age_list[index] === styleItem.indexItem) {
+        if( index == 0 && styleItem.main__block_age_list[index] == styleItem.indexItem) {
             return positionRight = '0%';
-        } else if(index === 1 && styleItem.main__block_age_list[index] === styleItem.indexItem) {
+        } else if(index == 1 && styleItem.main__block_age_list[index] == styleItem.indexItem) {
             return positionRight = '5%';
-        } else if (index === 2 &&  styleItem.main__block_age_list[index] === styleItem.indexItem) {
+        } else if (index == 2 &&  styleItem.main__block_age_list[index] == styleItem.indexItem) {
             return positionRight = '15%';
         } else {
             return positionRight;
@@ -184,19 +197,19 @@ export default function Main() {
 
     // mobile
     let style__item__mobile = (positionMobile, index) => {
-        if( index === 0 && styleItem.main__block_age_list[index] === styleItem.indexItem) {
+        if( index == 0 && styleItem.main__block_age_list[index] === styleItem.indexItem) {
             return positionMobile = {
                 background : 'linear-gradient(137.64deg,#ffa2a2 0,#ffbab6 97.97%)',
                 borderTopLeftRadius: `0%`,
                 borderTopRightRadius: `0%`,
             }
-        } else if(index === 1 && styleItem.main__block_age_list[index] === styleItem.indexItem) {
+        } else if(index == 1 && styleItem.main__block_age_list[index] === styleItem.indexItem) {
             return  positionMobile = {
                 background : 'linear-gradient(145deg,#80c1b7 0,#8fceca 97.97%)',
                 borderTopLeftRadius: `0%`,
                 borderTopRightRadius: `0%`,
             };
-        } else if (index === 2 &&  styleItem.main__block_age_list[index] === styleItem.indexItem) {
+        } else if (index == 2 &&  styleItem.main__block_age_list[index] === styleItem.indexItem) {
             return positionMobile = {
                 background : 'linear-gradient(137.64deg,#ff9e80 0,#ffc9ab 97.97%)',
                 borderTopLeftRadius: `0%`,
@@ -279,12 +292,13 @@ export default function Main() {
     
     
 
-
     return (
         <div className='main'>
             <div className="main__title">
                 <div className="main__title-stock">
-                    <button className='btn-bg main-btn'> Акции и события</button>
+                    <button className='btn-bg main-btn'
+                    onClick={() => {showModalRedux()}}
+                    > Акции и события</button>
                 </div>
                 <div className="main__title-title title">
                     <div className="title__clinick-title">
@@ -319,6 +333,7 @@ export default function Main() {
                 listModal = {firsItem}
                 >
             </ModalItem>
+
         </div>
     )
 

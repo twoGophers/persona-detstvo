@@ -1,0 +1,102 @@
+@import '../../assets/style/Imports.scss';
+@import '../../assets/style/General.scss';
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background: linear-gradient(137.64deg,#ffa2a2 0,#ffbab6 97.97%);
+    .modal-container {
+        display: block;
+        flex-direction: column;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            width: 0;
+          }
+        .modal-head {
+            display: flex;
+            justify-content: space-between;
+            margin: 5% 0%;
+            outline: 1px solid black;
+            position: relative;
+            .modal-head__close {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: -o-linear-gradient(312.36deg,#f0f1f5 42.53%,#fff 97.97%)!important;
+                background: linear-gradient(137.64deg,#f0f1f5 42.53%,#fff 97.97%)!important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                right: 0;
+                position: absolute;
+                cursor: pointer;
+                &:hover {
+                    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+                }
+                &::after {
+                    content: "";
+                    width: 50px;
+                    height: 50px;
+                    position: absolute;
+                    border-radius: 50%;
+                    box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+                }
+                &::before {
+                    content: "";
+                    width: 49px;
+                    height: 49px;
+                    position: absolute;
+                    border-radius: 50%;
+                    outline: 2px solid rgb(240, 240, 240);
+                    box-shadow: 0px 0px 8px 2px rgba(34, 60, 80, 0.2) inset;
+                }
+                & img {
+                    width: 50%;
+                    height: 50%;
+                }
+            }
+        }
+        .modal-main {
+            position: relative;
+            width: 100%;
+            height: auto;
+            padding-bottom: 5vh;
+            outline: 1px solid black;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 420px) {
+    .modal{
+        transition: all 2s ease-out;
+        animation: 2s modalAnimation cubic-bezier(0.19, 1, 0.22, 1);
+        .modal-container{
+            .modal-head {
+                .modal-head__title{
+                    width: 70%;
+                    line-height: 30px;
+                    position: relative;
+                    animation: 3s modalAnimation cubic-bezier(0.19, 1, 0.22, 1);
+                }
+                .modal-head__close{
+                    width: 40px;
+                    height: 40px;
+                    &::after,
+                    &::before {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+        } 
+    }
+    @keyframes modalAnimation {
+        0%{left: 100%; border-top-left-radius: 30%;}
+        100%{left: 0%; border-top-left-radius: 0%;}
+    }
+}

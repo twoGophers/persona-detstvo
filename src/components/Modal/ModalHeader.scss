@@ -181,13 +181,9 @@
                 transition: 1s;
                 animation: 2s modal-header-active cubic-bezier(0.19, 1, 0.22, 1);
             }
-            @keyframes modal-header-active {
-                0%{opacity: 0;}
-                100%{opacity: 1;}
-            }
 
         }
-    }
+    }  
     .arrow {
         border: solid #ffa180;
         border-width: 0 3px 3px 0;
@@ -196,6 +192,7 @@
         margin-left: 5px;
         transition: 0.3s;
     }
+
     .arrow-green {
         border: solid $greenColor;
         border-width: 0 3px 3px 0;

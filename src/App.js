@@ -6,7 +6,7 @@ import Direction from './components/direction/Direction';
 import About from './components/about/About';
 import Reviews from './components/reviews/Reviews';
 import Footer from './components/footer/Footer';
-
+import Modal from './components/Modal/Modal';
 
 import { useRef, useEffect, useState} from 'react';
 
@@ -39,6 +39,9 @@ function App() {
         <About data ={scroll > -2000}></About>
         <Reviews></Reviews>
         <Footer></Footer>
+
+        {/*Modal  */}
+        <Modal></Modal>
         
     </div>
   );
