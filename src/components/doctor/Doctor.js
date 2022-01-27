@@ -1,15 +1,28 @@
 import './Doctor.scss';
 import React from 'react';
 import { useRef, useEffect, useState} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Doctor_img from '../../assets/images/Doctor.png';
 
 export default function Doctor(props) {
 
-
 //Hoock
-const [scrollBlock, setScrollBlock] = useState(0);
-const inputRef = useRef();
+    const [scrollBlock, setScrollBlock] = useState(0);
+    const inputRef = useRef();
+
+    let dispatch = useDispatch();
+    let showModalDoctor = () => {
+        dispatch ({
+            type: "SHOW_MODAL", 
+            payload : true, 
+            title : 'Врачи',
+            doctorModal : true,
+            colorBg : 'linear-gradient(137.64deg,#81b3ff 14.8%,#9cc7ff 97.97%)'
+        })
+    }
+
+
 
     // Для отображения когда до скролили до элемента
     // Положение скролла
@@ -75,7 +88,10 @@ let scrollHandlerDoctor = () => {
                     <div className="doctor-body__content section__content">
                         Детская клиника «Персона Детство»&nbsp;— это врачи <br/>различных специальностей, широкий спектр услуг,<br/> современное оборудование и&nbsp;уникальный дизайн. <br />С любовью и&nbsp;заботой к&nbsp;каждой маленькой Персоне.
                     </div>
-                    <a href="/" className='btn doctor-body__link'>Познакомиться с врачами</a>
+                    <button
+                    className='btn doctor-body__link'
+                    onClick={() => showModalDoctor()}
+                    >Познакомиться с врачами</button>
                 </div>
                 <div className="doctor-body__img" style={{marginTop : scrollBlock + 'px'}}>
                     <img src={Doctor_img} alt={Doctor_img} />

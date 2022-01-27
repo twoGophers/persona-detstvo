@@ -9,6 +9,7 @@
     flex-wrap: wrap;
     column-gap: 4vw;
     row-gap: 4vw;
+
     .stock-item {
         width: 28%;
         min-width: 330px;
@@ -24,6 +25,26 @@
         -o-transition: all 0.3s ease-in-out;
         -webkit-transition: all 0.3s ease-in-out;
         cursor: pointer;
+
+        animation: 3s modal-header-active cubic-bezier(0.23, 1, 0.320, 1);
+        &:nth-child(1) {
+            animation-delay: 3.3s;
+        }
+        &:nth-child(2) {
+            animation-delay: 3.6s;
+        }
+        &:nth-child(3) {
+            animation-delay: 3.9s;
+        }
+        &:nth-child(4) {
+            animation-delay: 4.2s;
+        }
+        &:nth-child(5) {
+            animation-delay: 4.5s;
+        }
+        &:nth-child(6) {
+            animation-delay: 5s;
+        }
         &:hover {
             transform: translate(0,-3px);
             box-shadow: 3px 6px 8px 6px rgba(31, 45, 56, 0.2);

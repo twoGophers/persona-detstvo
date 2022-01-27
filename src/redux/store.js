@@ -3,8 +3,9 @@ import { createStore } from "@reduxjs/toolkit";
 const defaultState = {
     showModal : false,
     titleModal : '',
-    nameComponent : '',
-    mainModal : false
+    mainModal : false,
+    doctorModal : false,
+    colorBg : '' 
 }
 
 const reducer = (state = defaultState, action) => {
@@ -14,8 +15,9 @@ const reducer = (state = defaultState, action) => {
                 ...state,
                 showModal: action.payload,
                 titleModal : action.title,
-                nameComponent : action.name,
-                mainModal : action.mainModal
+                mainModal : action.mainModal,
+                doctorModal : action.doctorModal,
+                colorBg : action.colorBg
             }
         default : 
             return state

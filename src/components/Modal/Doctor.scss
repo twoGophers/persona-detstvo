@@ -1,0 +1,61 @@
+@import '../../assets/style/Imports.scss';
+
+.modal-doctor {
+    .modal-doctor__header{
+        display: flex;
+        flex-direction: row;
+        .modal-doctor__header-content{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            span {
+                color: white;
+            }
+            .modal-doctor__header_title {
+                font-size: 4.5vh;
+                line-height: 130%;
+            }
+            .modal-doctor__header_content {
+                font-size: 1.7vw;
+                line-height: 130%;
+                margin-top: 8%;
+            }
+        }
+        .modal-doctor__header-img {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            img {
+                width: 30%;
+            }
+        }
+    }
+    .modal-doctor__main {
+
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .modal-doctor {
+        .modal-doctor__header {
+            flex-direction: row;
+            .modal-doctor__header-content{
+                width: 80%;
+                .modal-doctor__header_title {
+                    font-size: 6vw;
+                }
+                .modal-doctor__header_content {
+                    font-size: 4vw;
+                }
+            }
+            .modal-doctor__header-img{
+                width: 20%;
+                img {
+                    right: 1%;
+                    position: absolute;
+                    width: 30%;
+                }
+            }
+        }
+    }
+}

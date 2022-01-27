@@ -22,7 +22,6 @@ export default function Reviews() {
                 return position_doctor;
             }
 
-            console.log((1200 - testScroll) / 2);
             setDirectionBlock((1200 - testScroll) / 5);
         } else {
             testScroll = 50;

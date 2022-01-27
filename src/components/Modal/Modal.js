@@ -3,14 +3,18 @@ import './Modal.scss';
 import { useState, useEffect} from 'react';
 //img
 import CloseModalRed from '../../assets/images/Close_Icon_icon-icons.com_69144.svg';
-//img list
+//img list Main
 import MomAndChild from '../../assets/images/stock/mom.jpg';
 import Girl from '../../assets/images/stock/2.jpg';
 import GirlOrange from '../../assets/images/stock/girl.jpg';
 import Uzy from '../../assets/images/stock/uzy.jpg';
 import Checkup from '../../assets/images/stock/checkup.jpg';
 
+// img list Doctor
+import DoctorModalImg from '../../assets/images/Doctor.png';
+//Style
 import './Stock.scss';
+import './Doctor.scss';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -20,10 +24,12 @@ export default function Modal() {
     let showModal = useSelector(state => state.showModal);
     let titleModal = useSelector(state => state.titleModal);
     let mainModal = useSelector(state => state.mainModal);
+    let colorBg = useSelector(state => state.colorBg);
+    let doctorModal = useSelector(state => state.doctorModal);
 
     let dispatch = useDispatch();
     let showModalRedux = () => {
-        dispatch({type: "SHOW_MODAL", payload : false, title : '', nameComponent : ''})
+        dispatch({type: "SHOW_MODAL", payload : false, title : '', nameComponent : '', colorBg : ''})
     };
 
 // List item
@@ -103,7 +109,7 @@ export default function Modal() {
     ];
 
   return (
-  <div className={showModal ? 'modal' : 'hide'}>
+  <div className={showModal ? 'modal' : 'hide'} style={{background : colorBg}}>
     <div className="modal-container section__container">
         <div className="modal-head">
             <div className="modal-head__title section__content-title">
@@ -137,6 +143,21 @@ export default function Modal() {
                     </a>
                 ))}
                 <a href="/" className='btn btn-bg stock-btn'>Услуги</a>
+            </div>
+            <div className={doctorModal ? "modal-doctor" : "hide"}>
+                <div className="modal-doctor__header">
+                    <div className="modal-doctor__header-content">
+                        <span className='modal-doctor__header_title'>«Здоровье детей — <br/> наша главная ценность»</span> 
+                        <span className='modal-doctor__header_content'>Капустина Софья</span>  
+                        <span className='modal-doctor__header_content'>Зав. педиатрическим  отделением</span>
+                    </div>
+                    <div className="modal-doctor__header-img">
+                        <img src={DoctorModalImg} alt={DoctorModalImg} />
+                    </div>
+                </div>
+                <div className="modal-doctor__main">
+
+                </div>
             </div>
         </div>
     </div>

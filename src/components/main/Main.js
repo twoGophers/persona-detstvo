@@ -19,7 +19,8 @@ export default function Main() {
             type: "SHOW_MODAL", 
             payload : true, 
             title : 'Последние события и акции',
-            mainModal : true
+            mainModal : true,
+            colorBg : 'linear-gradient(137.64deg,#ffa2a2 0,#ffbab6 97.97%)'
         })
     };
     
