@@ -1,11 +1,12 @@
 {
   "files": {
-    "main.css": "/persona-detstvo/static/css/main.a05e8173.css",
-    "main.js": "/persona-detstvo/static/js/main.62bca9ab.js",
+    "main.css": "/persona-detstvo/static/css/main.bd961701.css",
+    "main.js": "/persona-detstvo/static/js/main.40923b32.js",
     "static/js/787.d805fa6d.chunk.js": "/persona-detstvo/static/js/787.d805fa6d.chunk.js",
     "static/media/Skater1.png": "/persona-detstvo/static/media/Skater1.e62ffe08d8e621596122.png",
     "static/media/Doctor.png": "/persona-detstvo/static/media/Doctor.1f7cf57dfc20e9cdf531.png",
     "static/media/about-first.png": "/persona-detstvo/static/media/about-first.da69782e8852447db961.png",
+    "static/media/doctor-no-img.png": "/persona-detstvo/static/media/doctor-no-img.068cb41fd51f2c0b170a.png",
     "static/media/Girl4.png": "/persona-detstvo/static/media/Girl4.1d122e02f3e7bb66251b.png",
     "static/media/services-header.png": "/persona-detstvo/static/media/services-header.bb20d8c062e7c69d6184.png",
     "static/media/Baby0-1.png": "/persona-detstvo/static/media/Baby0-1.ff171a5dfeb03b9413c5.png",
@@ -21,19 +22,22 @@
     "static/media/mom.jpg": "/persona-detstvo/static/media/mom.50506f746675d1d01070.jpg",
     "static/media/logo.svg": "/persona-detstvo/static/media/logo.1d27b241b3481666b6e614ec06acda5b.svg",
     "static/media/emergency-help.svg": "/persona-detstvo/static/media/emergency-help.5fef0b2fab7ad92d4e7329e092040775.svg",
+    "static/media/x-10329.svg": "/persona-detstvo/static/media/x-10329.bff44a4831f512996aef42a8fb5a4100.svg",
     "static/media/phone-orange.svg": "/persona-detstvo/static/media/phone-orange.bfff2006161d8e1d4c23b6cce281a800.svg",
     "static/media/pen-white.svg": "/persona-detstvo/static/media/pen-white.3157ef8daad5e085eb92f02c53cf1106.svg",
     "index.html": "/persona-detstvo/index.html",
+    "static/media/filter.svg": "/persona-detstvo/static/media/filter.34a54e27299dcccdca3785affa9e136f.svg",
+    "static/media/filterWhite.svg": "/persona-detstvo/static/media/filterWhite.b74402fabcca68f00b34e7e84f511ca0.svg",
     "static/media/Close_Icon_icon-icons.com_69144.svg": "/persona-detstvo/static/media/Close_Icon_icon-icons.com_69144.9a0b3840553d35e01961ea2dfecd7574.svg",
     "static/media/close-white.svg": "/persona-detstvo/static/media/close-white.e445982c4b0f3cc57f4b7577ee67347f.svg",
     "static/media/menu-orange.svg": "/persona-detstvo/static/media/menu-orange.9d40ff8aeaf466d5fe99708bd62475fc.svg",
     "static/media/search-orange.svg": "/persona-detstvo/static/media/search-orange.6a2751b9afd2a865ccb198130b669422.svg",
-    "main.a05e8173.css.map": "/persona-detstvo/static/css/main.a05e8173.css.map",
-    "main.62bca9ab.js.map": "/persona-detstvo/static/js/main.62bca9ab.js.map",
+    "main.bd961701.css.map": "/persona-detstvo/static/css/main.bd961701.css.map",
+    "main.40923b32.js.map": "/persona-detstvo/static/js/main.40923b32.js.map",
     "787.d805fa6d.chunk.js.map": "/persona-detstvo/static/js/787.d805fa6d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a05e8173.css",
-    "static/js/main.62bca9ab.js"
+    "static/css/main.bd961701.css",
+    "static/js/main.40923b32.js"
   ]
 }
