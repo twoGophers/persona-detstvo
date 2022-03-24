@@ -10,6 +10,7 @@
     background-image: linear-gradient(137.64deg,#f0f1f5 42.53%,#fff 97.97%);
     position: relative;
     z-index: 2;
+    overflow: hidden;
     &__title {
         width: 30%;
         height: 100%;
@@ -233,13 +234,21 @@
     }
 }
 
-@media screen and (max-width: 1300px) {
-    .main__title {
-        .main__title-stock {
-            .main-btn{
-                margin-left: -15vw;
+@media screen and (max-width: 1350px) {
+    .main {
+        .main__title {
+                .main__title-title{
+                    .title__clinick-title{
+                        h1 {
+                            font-size: 40px;
+                            line-height: 50px;
+                        }
+                    }
+                }
+                .main-btn{
+                    margin-left: -150px;
+                }
             }
-        }
     }
 }
 
@@ -248,7 +257,7 @@
         .main__title {
             .main__title-title {
                 .title__clinick-title h1 {
-                    font-size: 50px;
+                    font-size: 40px;
                 }
                 .title__clinick-info span {
                     font-size: 20px;

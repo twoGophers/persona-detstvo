@@ -7,6 +7,7 @@ import About from './components/about/About';
 import Reviews from './components/reviews/Reviews';
 import Footer from './components/footer/Footer';
 import Modal from './components/Modal/Modal';
+import Test from './components/Test';
 
 import { useRef, useEffect, useState} from 'react';
 
@@ -42,6 +43,8 @@ function App() {
 
         {/*Modal  */}
         <Modal></Modal>
+
+        {/* <Test></Test> */}
         
     </div>
   );
