@@ -54,7 +54,6 @@ export default function Modal() {
 // Список карточек докторов из базы
     const [profileDoctor, setProfileDoctor] = useState(item_doctor);
 
-
 // Начало : Фильтр докторов
     const profile_doctor = (item) => {
 
@@ -68,6 +67,10 @@ export default function Modal() {
     };
 // Конец : Фильтр докторов
 
+
+// Начало : Пагинация в модальном окне
+
+// Конец : Пагинация в модальном окне
 
   return (
   <div className={showModal ? 'modal' : 'hide'} style={{background : colorBg}}>
@@ -186,6 +189,9 @@ export default function Modal() {
                             </div>
                         {/* Конец : Кнопка выбора по категориям */}
                     </div>
+
+                    
+
                 {/* Конец : модалка с врачами */}
 
             </div>
