@@ -136,6 +136,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
+            padding-bottom: 40px;
             .doctor_block {
                 width: 28%;
                 margin-top: 4rem;
@@ -188,6 +189,9 @@
                         height: 50%;
                     }
                 }
+            }
+            .rpb-root {
+                margin: 5%;
             }
         }
     }

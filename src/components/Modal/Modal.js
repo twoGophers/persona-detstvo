@@ -15,12 +15,17 @@ import IconUserDoctor from '../../assets/images/doctors/doctor-no-img.png';
 import FilterDoctor from '../../assets/images/doctors/filter.svg';
 import FilterDoctorWhite from '../../assets/images/doctors/filterWhite.svg';
 import CloseBlockProfession from '../../assets/images/doctors/x-10329.svg';
+
 //Style
 import './Stock.scss';
 import './DoctorModal.scss';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { selectOptions } from '@testing-library/user-event/dist/select-options';
+
+// Pagination
+import { Pagination } from "react-pagination-bar"
+import 'react-pagination-bar/dist/index.css'
 
 export default function Modal() {
 
@@ -64,12 +69,26 @@ export default function Modal() {
 
         const filteredDoctor = item_doctor.filter( it => it.prof === item);
         setProfileDoctor(filteredDoctor);
+        paginatoinItem(filteredDoctor);
     };
 // Конец : Фильтр докторов
 
 
 // Начало : Пагинация в модальном окне
+    const [currentPage, setCurrentPage] = useState(1);
+    const pagePostsLimit = profileDoctor.length;
 
+    let paginatoinItem = (filteredDoctor) => {
+        let paginationItemBD = profileDoctor;
+        if(filteredDoctor) {
+            paginationItemBD = filteredDoctor;
+        }
+        return paginationItemBD;
+    };
+
+useEffect(() => {
+    paginatoinItem();
+}, [])
 // Конец : Пагинация в модальном окне
 
   return (
@@ -170,7 +189,12 @@ export default function Modal() {
 
                                 {/*Начало : Карточка докторов */}
                                     <div className="user-doctor__cart">
-                                        { profileDoctor.map(({id, images, name, surname, middleName, profile}) => (
+                                        { profileDoctor
+                                        .slice(
+                                            (currentPage - 1) * pagePostsLimit,
+                                            (currentPage - 1) * pagePostsLimit + pagePostsLimit
+                                        )
+                                        .map(({id, images, name, surname, middleName, profile}) => (
                                             <div className="doctor_block" key={id}>
                                                 <img className="doctor_block_img" src={require('../../assets/images/doctors/' + images)} alt="" />
                                                 <div className="doctor_block_content">
@@ -183,6 +207,15 @@ export default function Modal() {
                                                 </div>
                                             </div>
                                         ))}
+
+                                        <Pagination 
+                                            initialPage={currentPage}
+                                            itemPerPage={pagePostsLimit}
+                                            onPageСhange={(pageNumber) => setCurrentPage(pageNumber)}
+                                            // totalItems={profileDoctor.length}
+                                            totalItems={0}
+                                            onlyPageNumbers={true}
+                                        />
                                     </div>
                                 {/*Конец : Карточка докторов */}
 
