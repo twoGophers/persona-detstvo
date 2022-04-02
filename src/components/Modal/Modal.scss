@@ -5,9 +5,9 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
     height: 130vh;
     z-index: 100;
+    display : block;
 
     transition: all 2s ease-out;
     animation: 2s modalAnimation cubic-bezier(0.19, 1, 0.22, 1);
@@ -83,6 +83,7 @@
 
 @media screen and (max-width: 420px) {
     .modal{
+        width: -webkit-fill-available;
         .modal-container{
             .modal-head {
                 .modal-head__title{
@@ -107,6 +108,6 @@
 }
 
 @keyframes modalAnimation {
-    from{left: 100%; border-top-left-radius: 30%;}
-    to{left: 0%; border-top-left-radius: 0%;}
+    from{right: -30000px; border-top-left-radius: 30%;}
+    to{right: 0px; border-top-left-radius: 0%;}
 }

@@ -155,6 +155,13 @@ b {
     @include font ($fz20, $fw7, $lh20, $fsn);
 }
 
+@media screen and (max-width: 420px) {
+    .btn-font {
+        width: max-content;
+        margin: 0 auto;
+    }
+}
+
 .hide {
     display: none;
 }

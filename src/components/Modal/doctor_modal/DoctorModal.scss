@@ -219,5 +219,20 @@
                 }
             }
         }
+        .modal-doctor__main {
+            margin-top: 0px;
+            .user-doctor__filter {
+                & span {
+                    font-size: 14px;
+                }
+            }
+            .user-doctor__cart {
+                flex-direction: column;
+                align-items: center;
+                .doctor_block {
+                    width: 95%;
+                }
+            }
+        }
     }
 }

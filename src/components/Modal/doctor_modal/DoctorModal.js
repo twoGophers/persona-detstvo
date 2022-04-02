@@ -36,7 +36,9 @@ const [imgFilterImg, setImgFilterImg] = useState(false);
 const [show_block_filter_doctor, setShow_block_filter_doctor] = useState(false);
 
 // Список карточек докторов из базы
-const [profileDoctor, setProfileDoctor] = useState(item_doctor);
+let doctor_item_panigation = [];
+doctor_item_panigation = item_doctor;
+const [profileDoctor, setProfileDoctor] = useState(doctor_item_panigation);
 
 // Начало : Фильтр докторов
 const profile_doctor = (item) => {
@@ -47,27 +49,17 @@ const profile_doctor = (item) => {
     };
 
     const filteredDoctor = item_doctor.filter( it => it.prof === item);
-    setProfileDoctor(filteredDoctor);
-    paginatoinItem(filteredDoctor);
+    doctor_item_panigation = filteredDoctor;
+    console.log(doctor_item_panigation);
+    setProfileDoctor(doctor_item_panigation);
 };
 // Конец : Фильтр докторов
 
 
 // Начало : Пагинация в модальном окне
 const [currentPage, setCurrentPage] = useState(1);
-const pagePostsLimit = profileDoctor.length;
+const pagePostsLimit = 3;
 
-let paginatoinItem = (filteredDoctor) => {
-    let paginationItemBD = profileDoctor;
-    if(filteredDoctor) {
-        paginationItemBD = filteredDoctor;
-    }
-    return paginationItemBD;
-};
-
-useEffect(() => {
-paginatoinItem();
-}, [])
 // Конец : Пагинация в модальном окне
 
     return (
@@ -144,12 +136,10 @@ paginatoinItem();
                                 ))}
 
                                 <Pagination 
-                                    initialPage={currentPage}
-                                    itemPerPage={pagePostsLimit}
-                                    onPageСhange={(pageNumber) => setCurrentPage(pageNumber)}
-                                    // totalItems={profileDoctor.length}
-                                    totalItems={0}
+                                    totalItems={doctor_item_panigation.length}
+                                    itemsPerPage={pagePostsLimit}
                                     onlyPageNumbers={true}
+                                    onPageСhange={(pageNumber) => setCurrentPage(pageNumber)}
                                 />
                             </div>
                         {/*Конец : Карточка докторов */}
