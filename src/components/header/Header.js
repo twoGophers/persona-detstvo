@@ -5,12 +5,13 @@ import search_orange from '../../assets/images/search-orange.svg';
 import search_phone from '../../assets/images/phone-orange.svg';
 import emergency_help from '../../assets/images/emergency-help.svg';
 import about_first from '../../assets/images/about-first.png';
-import headerPencil from '../../assets/images/pen-white.svg';
-import ModalHeader from '../Modal/ModalHeader';
 import Burger from '../../assets/images/menu-orange.svg';
 import CloseMobile from '../../assets/images/close-white.svg';
 
-import React, { useState, useEffect, useRef} from 'react';
+//Mobile version header
+import ModalHeader from '../Modal/modal_mobile_header/ModalHeader';
+
+import React, { useState } from 'react';
 
 function Header () {
     

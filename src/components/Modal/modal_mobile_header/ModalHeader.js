@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef} from 'react';
+import React, { useState,  useRef} from 'react';
 import './ModalHeader.scss';
-import search_orange from '../../assets/images/search-orange.svg';
-import baby from '../../assets/images/Baby0-1.png';
+import search_orange from '../../../assets/images/search-orange.svg';
+import baby from '../../../assets/images/Baby0-1.png';
 
+// Мобильная версия меню
 export default function ModalHeader({active, setActive, listItem, iconSearch, iconPhone, iconBurger}) {
 
     // Style vector active

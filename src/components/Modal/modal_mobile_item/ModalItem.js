@@ -1,6 +1,6 @@
 import React from 'react';
 import './ModalItem.scss';
-import Btn_icon from '../ui/Btn_icon';
+import BtnIcon from '../../ui/Btn_icon';
 import { useState, useEffect} from 'react';
 
 
@@ -41,7 +41,7 @@ let showHeader = () => {
                 <div className={active ? "modal-item__content modal-item__content-active" : "modal-item__content"}>
                     {itemList.map(item => (
                         <ul key={item.key}>
-                            <li><Btn_icon></Btn_icon> <a href="/">{item.text}</a></li>
+                            <li><BtnIcon></BtnIcon> <a href="/">{item.text}</a></li>
                         </ul>
                     ))}
                 </div> 

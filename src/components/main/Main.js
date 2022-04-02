@@ -1,16 +1,16 @@
 import React from 'react';
 import './Main.scss';
-import baby from '../../assets/images/Baby0-1.png';
-import girl from '../../assets/images/Girl4.png';
-import boy from '../../assets/images/Skater1.png';
-import Btn_icon from '../ui/Btn_icon';
-import ModalItem from '../Modal/ModalItem';
+import BtnIcon from '../ui/Btn_icon';
+import ModalItem from '../Modal/modal_mobile_item/ModalItem';
 //
 import { useState, useEffect} from 'react';
 import {Link} from 'react-scroll';
 
+//db Блоки для main с возрастом на главном блоке
+import main__block_age_list from '../db/main__block_age_list';
 
-import { useDispatch, useSelector } from 'react-redux';
+
+import { useDispatch } from 'react-redux';
 export default function Main() {
     //Redux
     let dispatch = useDispatch();
@@ -27,75 +27,7 @@ export default function Main() {
 
 
     //Hoock
-
-    let main__block_age_list = [
-        {
-            id : 1, 
-            age : '0-1', 
-            ageName : 'год',
-            ageMobile : '0 до 1 года', 
-            color : 'linear-gradient(137.64deg,#ffa2a2 0,#ffbab6 97.97%)',
-            images : baby,
-            status : false,
-            positionRight : `-22%`,
-            positionMobile : {
-                background : 'linear-gradient(137.64deg,#ffa2a2 0,#ffbab6 97.97%)',
-            },
-            display : `none`,
-            backgroundPosition : `10%`,
-            list : [
-                {key : 1, text : 'Патронаж'},
-                {key : 2, text : 'Вакцинация'},
-                {key : 3, text : 'Прием педиатра'},
-                {key : 4, text : 'УЗИ'},
-                {key : 5, text : 'Неонатальный скрининг'},
-            ],
-        },
-        {
-            id : 2, 
-            age : '1-3', 
-            ageName : 'годa', 
-            ageMobile : '1 до 3 лет', 
-            color : 'linear-gradient(145deg,#80c1b7 0,#8fceca 97.97%)',
-            images : girl,
-            status : false,
-            positionRight : `-13%`,
-            positionMobile : {
-                background: 'linear-gradient(145deg,#80c1b7 0,#8fceca 97.97%)',
-            },
-            display : `none`,
-            backgroundPosition : `10%`,
-            list : [
-                {key : 1, text : 'Вызов врача на дом'},
-                {key : 2, text : 'Прием педиатра'},
-                {key : 3, text : 'Вакцинация'},
-                {key : 4, text : 'УЗИ'}
-            ],
-        },
-        {
-            id : 3, 
-            age : '3-18', 
-            ageName : 'лет',
-            ageMobile : '3 до 8 лет', 
-            color : 'linear-gradient(137.64deg,#ff9e80 0,#ffc9ab 97.97%)',
-            images : boy,
-            status : false,
-            positionRight : `-5%`,
-            positionMobile : {
-                background : 'linear-gradient(137.64deg,#ff9e80 0,#ffc9ab 97.97%)',
-            },
-            display : `none`,
-            backgroundPosition : `10%`,
-            list : [
-                {key : 1, text : 'Вызов врача на дом'},
-                {key : 2, text : 'УЗИ'},
-                {key : 3, text : 'Лабораторные исследования'},
-                {key : 4, text : 'Прием невролога'}
-            ],
-        },
-    ];
     
-    const [indexItem, setIndexItem] = useState({})
     const [styleItem, setStyleItem] = useState({main__block_age_list});
 
     let click__item = (index) => {
@@ -106,11 +38,11 @@ export default function Main() {
     
 
     let style__item = (positionRight, index) => {
-        if( index == 0 && styleItem.main__block_age_list[index] == styleItem.indexItem) {
+        if( index === 0 && styleItem.main__block_age_list[index] === styleItem.indexItem) {
             return positionRight = '0%';
-        } else if(index == 1 && styleItem.main__block_age_list[index] == styleItem.indexItem) {
+        } else if(index === 1 && styleItem.main__block_age_list[index] === styleItem.indexItem) {
             return positionRight = '5%';
-        } else if (index == 2 &&  styleItem.main__block_age_list[index] == styleItem.indexItem) {
+        } else if (index === 2 &&  styleItem.main__block_age_list[index] === styleItem.indexItem) {
             return positionRight = '15%';
         } else {
             return positionRight;
@@ -145,11 +77,11 @@ export default function Main() {
     function toggleRunning (event) {
         let main__block_age = document.querySelectorAll('.main-block');
         main__block_age.forEach(item => {
-            if(item.getAttribute('name') == event.target.getAttribute('name') && event.target.getAttribute('name') == 1) {
+            if(item.getAttribute('name') === event.target.getAttribute('name') && event.target.getAttribute('name') === 1) {
                 item.style.right = `-20%`;
-            } else if(item.getAttribute('name') == event.target.getAttribute('name') && event.target.getAttribute('name') == 2) {
+            } else if(item.getAttribute('name') === event.target.getAttribute('name') && event.target.getAttribute('name') === 2) {
                 item.style.right = `-13%`;
-            } else if(item.getAttribute('name') == event.target.getAttribute('name') && event.target.getAttribute('name') == 3) {
+            } else if(item.getAttribute('name') === event.target.getAttribute('name') && event.target.getAttribute('name') === 3) {
                 item.style.right = `-5%`;
             }
         })
@@ -182,7 +114,7 @@ export default function Main() {
                     >
                         {list.map( item_list => (
                             <ul key={item_list.key}>
-                                <li><Btn_icon/>{item_list.text}</li>
+                                <li><BtnIcon/>{item_list.text}</li>
                             </ul>
                         ))}
                         
@@ -198,19 +130,19 @@ export default function Main() {
 
     // mobile
     let style__item__mobile = (positionMobile, index) => {
-        if( index == 0 && styleItem.main__block_age_list[index] === styleItem.indexItem) {
+        if( index === 0 && styleItem.main__block_age_list[index] === styleItem.indexItem) {
             return positionMobile = {
                 background : 'linear-gradient(137.64deg,#ffa2a2 0,#ffbab6 97.97%)',
                 borderTopLeftRadius: `0%`,
                 borderTopRightRadius: `0%`,
             }
-        } else if(index == 1 && styleItem.main__block_age_list[index] === styleItem.indexItem) {
+        } else if(index === 1 && styleItem.main__block_age_list[index] === styleItem.indexItem) {
             return  positionMobile = {
                 background : 'linear-gradient(145deg,#80c1b7 0,#8fceca 97.97%)',
                 borderTopLeftRadius: `0%`,
                 borderTopRightRadius: `0%`,
             };
-        } else if (index == 2 &&  styleItem.main__block_age_list[index] === styleItem.indexItem) {
+        } else if (index === 2 &&  styleItem.main__block_age_list[index] === styleItem.indexItem) {
             return positionMobile = {
                 background : 'linear-gradient(137.64deg,#ff9e80 0,#ffc9ab 97.97%)',
                 borderTopLeftRadius: `0%`,
@@ -229,10 +161,10 @@ export default function Main() {
     // }
 
     function positionMobileStart () {
-        let itemMobile = document.querySelectorAll('.main-block__mobile');
+        let itemMobile = document.querySelectorAll('.main-block__mobile-passive');
         itemMobile.forEach(item => {
             if(item.getAttribute('name') == 1) {
-                return item.style.marginTop = `0vw`;
+                return item.style.marginTop = `0px`;
             } else if(item.getAttribute('name') == 2) {
                 return item.style.marginTop = `-20vw`;
             } else if(item.getAttribute('name') == 3) {
