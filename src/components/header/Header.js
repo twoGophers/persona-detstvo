@@ -9,9 +9,10 @@ import Burger from '../../assets/images/menu-orange.svg';
 import CloseMobile from '../../assets/images/close-white.svg';
 
 //Mobile version header
-import ModalHeader from '../Modal/modal_mobile_header/ModalHeader';
+import ModalMobileHeader from '../Modal/modal_mobile_header/ModalMobileHeader';
 
 import React, { useState } from 'react';
+import ModalHeader from '../Modal/modal_header/ModalHeader';
 
 function Header () {
     
@@ -165,25 +166,29 @@ function Header () {
 
 //Orange
     let handlerSearchOrange = () => {
-        setIconBurger(false);
-        setIconSearch(true);
-        setIconPhone(false);
-        if(iconSearch) {
-            setIconSearch(false);
-        };
-        setActiveModalHeader(true);
-        modal_header_fixed();
+        if(window.innerWidth < 900) {
+            setIconBurger(false);
+            setIconSearch(true);
+            setIconPhone(false);
+            if(iconSearch) {
+                setIconSearch(false);
+            };
+            setActiveModalHeader(true);
+            modal_header_fixed();
+        }
     };
 //Phone
     let handlerSearchPhone = () => {
-        setIconBurger(false);
-        setIconSearch(false);
-        setIconPhone(true);
-        if(iconPhone) {
-            setIconPhone(false);
-        };
-        setActiveModalHeader(true);
-        modal_header_fixed();
+        if(window.innerWidth < 900) {
+            setIconBurger(false);
+            setIconSearch(false);
+            setIconPhone(true);
+            if(iconPhone) {
+                setIconPhone(false);
+            };
+            setActiveModalHeader(true);
+            modal_header_fixed();
+        }
     };
 
 //Burger
@@ -197,6 +202,20 @@ function Header () {
         setActiveModalHeader(true);
         modal_header_fixed();
     };
+
+// Появление блока поиска при клике на экране больше 1000 пикселей
+const [nameSearchAndPhoneModal, setNameSearchAndPhoneModal] = useState();
+const [showSearchAndPhone, setShowSearchAndPhone] = useState(false)
+
+
+let showPageSearch = (item) => {
+    if(window.innerWidth > 900) {
+        setShowSearchAndPhone(true);
+    }
+};
+
+
+// Появление блока при декстопе по клику на иконку поиска и телефона
 
     return (
         <section className='header'>
@@ -212,6 +231,7 @@ function Header () {
                     style={{backgroundImage : iconSearch ? `url('${CloseMobile}')` : `url('${search_orange}')`}}
                         onClick={() => {
                             handlerSearchOrange();
+                            showPageSearch('search');
                             if(iconSearch) {
                                 setActiveModalHeader(false);
                                 modal_header_absolute();
@@ -222,6 +242,7 @@ function Header () {
                     style={{backgroundImage : iconPhone ? `url('${CloseMobile}')` : `url('${search_phone}')`}}
                         onClick={() => {
                             handlerSearchPhone();
+                            showPageSearch('phone');
                             if(iconPhone) {
                                 setActiveModalHeader(false);
                                 modal_header_absolute();
@@ -292,14 +313,21 @@ function Header () {
                 </div>
             </div>
 
-            <ModalHeader 
-                active={activeModalHeader}
-                setActive={setActiveModalHeader}
-                listItem={list}
-                iconSearch={iconSearch}
-                iconPhone={iconPhone}
-                iconBurger={iconBurger}
+        {/* Передача на мобильную версию значений */}
+            <ModalMobileHeader 
+                active = {activeModalHeader}
+                setActive = {setActiveModalHeader}
+                listItem = {list}
+                iconSearch = {iconSearch}
+                iconPhone = {iconPhone}
+                iconBurger = {iconBurger}
                 >
+            </ModalMobileHeader>
+
+        {/* Появление модального окна при клике на поиск или телефон более 900 пикселей */}
+            <ModalHeader
+                showSearchAndPhone = {showSearchAndPhone}
+            >
             </ModalHeader>
 
         </section>

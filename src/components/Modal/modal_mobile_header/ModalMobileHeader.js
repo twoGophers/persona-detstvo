@@ -1,10 +1,12 @@
+// Блок, который появляется по клику из навигации по телефону или поиску на мобильной версии
+
 import React, { useState,  useRef} from 'react';
-import './ModalHeader.scss';
+import './ModalMobileHeader.scss';
 import search_orange from '../../../assets/images/search-orange.svg';
 import baby from '../../../assets/images/Baby0-1.png';
 
 // Мобильная версия меню
-export default function ModalHeader({active, setActive, listItem, iconSearch, iconPhone, iconBurger}) {
+export default function ModalMobileHeader({active, setActive, listItem, iconSearch, iconPhone, iconBurger}) {
 
     // Style vector active
     let transformDown = {

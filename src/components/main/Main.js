@@ -77,11 +77,11 @@ export default function Main() {
     function toggleRunning (event) {
         let main__block_age = document.querySelectorAll('.main-block');
         main__block_age.forEach(item => {
-            if(item.getAttribute('name') === event.target.getAttribute('name') && event.target.getAttribute('name') === 1) {
+            if(item.getAttribute('name') == event.target.getAttribute('name') && event.target.getAttribute('name') == 1) {
                 item.style.right = `-20%`;
-            } else if(item.getAttribute('name') === event.target.getAttribute('name') && event.target.getAttribute('name') === 2) {
+            } else if(item.getAttribute('name') == event.target.getAttribute('name') && event.target.getAttribute('name') == 2) {
                 item.style.right = `-13%`;
-            } else if(item.getAttribute('name') === event.target.getAttribute('name') && event.target.getAttribute('name') === 3) {
+            } else if(item.getAttribute('name') == event.target.getAttribute('name') && event.target.getAttribute('name') == 3) {
                 item.style.right = `-5%`;
             }
         })

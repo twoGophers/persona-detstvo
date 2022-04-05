@@ -1,3 +1,5 @@
+// Блок по клику на главном экране выбора возрастным категориями в мобильной версии
+
 import React from 'react';
 import './ModalItem.scss';
 import BtnIcon from '../../ui/Btn_icon';
