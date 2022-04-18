@@ -305,6 +305,7 @@
                 }
                 .title__clinick-info span {
                     @include font ($fz16, $fw7, $lh30, $fsn);
+                    min-width: 300px;
                 }
                 .title__clinick-reseption-btn {
                     display: none;

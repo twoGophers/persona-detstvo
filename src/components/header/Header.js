@@ -14,6 +14,8 @@ import ModalMobileHeader from '../Modal/modal_mobile_header/ModalMobileHeader';
 import React, { useState } from 'react';
 import ModalHeader from '../Modal/modal_header/ModalHeader';
 
+import { useDispatch, useSelector } from 'react-redux';
+
 function Header () {
     
     //Hoock
@@ -205,13 +207,19 @@ function Header () {
 
 // Появление блока поиска при клике на экране больше 1000 пикселей
 const [nameSearchAndPhoneModal, setNameSearchAndPhoneModal] = useState();
-const [showSearchAndPhone, setShowSearchAndPhone] = useState(false)
-
 
 let showPageSearch = (item) => {
     if(window.innerWidth > 900) {
-        setShowSearchAndPhone(true);
+        setNameSearchAndPhoneModal(item);
+
+        showModalRedux();
     }
+};
+
+
+let dispatch = useDispatch();
+let showModalRedux = (item) => {
+    dispatch({type: "SHOW_MODAL", showSearchAndPhone : true})
 };
 
 
@@ -325,8 +333,8 @@ let showPageSearch = (item) => {
             </ModalMobileHeader>
 
         {/* Появление модального окна при клике на поиск или телефон более 900 пикселей */}
-            <ModalHeader
-                showSearchAndPhone = {showSearchAndPhone}
+            <ModalHeader 
+                nameSearchAndPhoneModal={nameSearchAndPhoneModal}
             >
             </ModalHeader>
 

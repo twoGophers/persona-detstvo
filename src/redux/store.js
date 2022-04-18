@@ -5,7 +5,9 @@ const defaultState = {
     titleModal : '',
     mainModal : false,
     doctorModal : false,
-    colorBg : '' 
+    colorBg : '',
+    showSearchAndPhone : false,
+    nameInformationHeader : 'ddddd' 
 }
 
 const reducer = (state = defaultState, action) => {
@@ -17,7 +19,9 @@ const reducer = (state = defaultState, action) => {
                 titleModal : action.title,
                 mainModal : action.mainModal,
                 doctorModal : action.doctorModal,
-                colorBg : action.colorBg
+                colorBg : action.colorBg,
+                showSearchAndPhone : action.showSearchAndPhone,
+                nameInformationHeader : action.nameInformationHeader
             }
         default : 
             return state
